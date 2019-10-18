@@ -1,0 +1,6 @@
+RewriteEngine on
+RewriteCond %{HTTPS_HOST} ^site\.com\.ua [NC]
+RewriteCond %{HTTPS:X-Forwarded-Proto} ^https$
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
